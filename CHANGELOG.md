@@ -6,6 +6,13 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-09-19
+
+### Fixed
+
+- Telegram Bot API path now uses an absolute-path reference (`/bot{token}/…`) so
+  tokens containing `:` are not misparsed as a URI scheme
+
 ## [1.0.0] - 2026-09-18
 
 First stable release of the send-only notification transport.

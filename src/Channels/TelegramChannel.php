@@ -42,8 +42,10 @@ final class TelegramChannel implements ChannelInterface
                 ->withTimeout($this->timeout)
                 ->build();
 
+            // Absolute-path reference (/bot…) so tokens containing ":" are not
+            // parsed as a URI scheme (RFC 3986) when joined to the API base.
             $prepared = $client->requestBuilder()
-                ->post('bot' . $this->botToken . '/sendMessage')
+                ->post('/bot' . $this->botToken . '/sendMessage')
                 ->withJson([
                     'chat_id' => $this->chatId,
                     'text' => $this->formatter->formatPlain($message),

@@ -254,15 +254,6 @@ jobs:
           cp build/coverage/matrix/clover-Laravel12.xml build/coverage/clover-combined.xml
           ls -la build/coverage
 
-      - name: Upload to Codecov
-        if: github.event.pull_request.user.type != 'Bot'
-        uses: codecov/codecov-action@v7
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: build/coverage/clover-combined.xml
-          fail_ci_if_error: true
-          verbose: true
-
       - name: Resolve SonarQube host URL
         if: github.event.pull_request.user.type != 'Bot'
         id: sonar-config
@@ -291,3 +282,14 @@ jobs:
         with:
           args: >
             -Dsonar.php.coverage.reportPaths=build/coverage/clover-combined.xml
+
+      - name: Upload to Codecov
+        if: github.event.pull_request.user.type != 'Bot'
+        continue-on-error: true
+        uses: codecov/codecov-action@v7
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: build/coverage/clover-combined.xml
+          fail_ci_if_error: false
+          verbose: true
+

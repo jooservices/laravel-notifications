@@ -8,6 +8,8 @@ versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [1.0.0] - 2026-09-18
 
+First stable release of the send-only notification transport.
+
 ### Added
 
 - Send-only notification transport for Laravel 12/13

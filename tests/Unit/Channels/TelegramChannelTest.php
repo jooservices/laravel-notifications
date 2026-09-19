@@ -55,6 +55,35 @@ final class TelegramChannelTest extends TestCase
         self::assertStringContainsString('Circuit open', (string) $recorded[0]->request->getBody());
         self::assertStringContainsString('source_slug: javdb', (string) $recorded[0]->request->getBody());
     }
+
+    public function testPostsWhenBotTokenContainsColon(): void
+    {
+        ClientBuilder::fake()->respond(
+            'POST',
+            '*',
+            (new TestResponseSequence())->push(TestResponse::json(['ok' => true])),
+        );
+
+        $client = ClientBuilder::create()
+            ->withBaseUri('https://api.telegram.org/')
+            ->build();
+
+        $channel = new TelegramChannel(
+            botToken: '123456:ABC-DEF',
+            chatId: '42',
+            client: $client,
+        );
+
+        $result = $channel->send(Message::make('Subject', 'Body'));
+
+        self::assertTrue($result->isSent(), (string) $result->reason);
+        $recorded = ClientBuilder::recorded();
+        self::assertCount(1, $recorded);
+        self::assertSame(
+            'https://api.telegram.org/bot123456:ABC-DEF/sendMessage',
+            (string) $recorded[0]->request->getUri(),
+        );
+    }
     public function testMarksFailedOnNonSuccessStatus(): void
     {
         ClientBuilder::fake()->respond(

@@ -1,6 +1,6 @@
 # JOOservices Laravel Notifications Documentation
 
-Documentation for `jooservices/laravel-notifications` (`JOOservices\LaravelNotifications\`). Current line: **v1.0.0**.
+Documentation for `jooservices/laravel-notifications` (`JOOservices\LaravelNotifications\`). Current line: **v1.0.1**.
 
 ## Recommended reading order
 

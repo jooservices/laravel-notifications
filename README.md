@@ -12,7 +12,7 @@
 
 **JOOservices Laravel Notifications** is a send-only Laravel notification transport for Telegram, Slack, and email. The application owns templates, queueing, debounce, and logging. This package transports **pre-rendered** subject/body strings through channel adapters and returns a structured `SendReport`.
 
-Composer package: `jooservices/laravel-notifications` — current line: **v1.0.0**.
+Composer package: `jooservices/laravel-notifications` — current line: **v1.0.1**.
 
 ## Features
 

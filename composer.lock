@@ -1061,16 +1061,16 @@
         },
         {
             "name": "jooservices/client",
-            "version": "v4.2.0",
+            "version": "v4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jooservices/client.git",
-                "reference": "e0103a8a74dd17f1f194b208eaf38aaac64cc5fd"
+                "reference": "191312b7f02070c4024dae6850877356cf12a751"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jooservices/client/zipball/e0103a8a74dd17f1f194b208eaf38aaac64cc5fd",
-                "reference": "e0103a8a74dd17f1f194b208eaf38aaac64cc5fd",
+                "url": "https://api.github.com/repos/jooservices/client/zipball/191312b7f02070c4024dae6850877356cf12a751",
+                "reference": "191312b7f02070c4024dae6850877356cf12a751",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,9 @@
             },
             "require-dev": {
                 "captainhook/captainhook": "^5.23",
+                "fakerphp/faker": "^1.24",
                 "friendsofphp/php-cs-fixer": "^3.65",
+                "guzzlehttp/guzzle": "^7.9",
                 "laravel/pint": "^1.18",
                 "phpbench/phpbench": "^1.6",
                 "phpmd/phpmd": "^2.15",
@@ -1113,9 +1115,9 @@
             "description": "PSR-18 HTTP client with JOOservices developer experience.",
             "support": {
                 "issues": "https://github.com/jooservices/client/issues",
-                "source": "https://github.com/jooservices/client/tree/v4.2.0"
+                "source": "https://github.com/jooservices/client/tree/v4.5.0"
             },
-            "time": "2026-08-28T19:59:26+00:00"
+            "time": "2026-10-10T23:39:04+00:00"
         },
         {
             "name": "jooservices/dto",
